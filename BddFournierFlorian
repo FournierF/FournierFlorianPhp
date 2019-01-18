@@ -1,0 +1,91 @@
+-- phpMyAdmin SQL Dump
+-- version 4.8.3
+-- https://www.phpmyadmin.net/
+--
+-- Host: localhost:8889
+-- Generation Time: Jan 18, 2019 at 04:17 PM
+-- Server version: 5.7.23
+-- PHP Version: 7.2.10
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+--
+-- Database: `micro_blog`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `message`
+--
+
+CREATE TABLE `message` (
+  `id` int(11) NOT NULL,
+  `msg` text NOT NULL,
+  `dates` int(11) NOT NULL,
+  `vote` int(11) DEFAULT '0',
+  `last_vote` text
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `message`
+--
+
+INSERT INTO `message` (`id`, `msg`, `dates`, `vote`, `last_vote`) VALUES
+(3, 'test modif', 1547825132, 1, '::1'),
+(4, 'ok', 1547827109, 1, '::1');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `utilisateurs`
+--
+
+CREATE TABLE `utilisateurs` (
+  `id` int(11) NOT NULL,
+  `nom` text NOT NULL,
+  `prenom` text NOT NULL,
+  `mail` text NOT NULL,
+  `password` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `utilisateurs`
+--
+
+INSERT INTO `utilisateurs` (`id`, `nom`, `prenom`, `mail`, `password`) VALUES
+(1, 'Fournier', 'Florian', 'fournier.florian.iut@gmail.com', 'test'),
+(2, 'test', 'test', 'test@gmail.com', 'test');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `message`
+--
+ALTER TABLE `message`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `utilisateurs`
+--
+ALTER TABLE `utilisateurs`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `message`
+--
+ALTER TABLE `message`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT for table `utilisateurs`
+--
+ALTER TABLE `utilisateurs`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
